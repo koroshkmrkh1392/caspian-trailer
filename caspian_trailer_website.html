@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کاسپین تریلر | تولید و فروش تریلی</title>
+<style>
+:root{--navy:#102235;--navy2:#18364f;--orange:#f28c28;--cream:#f5f7fa;--muted:#64748b;--line:#e2e8f0;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--cream);color:#172638;line-height:1.8}
+a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}
+.topbar{background:#0a1927;color:#dbe6ef;padding:8px 5%;font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{background:var(--navy);color:white;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:48px;height:48px;background:var(--orange);color:#142638;border-radius:10px;display:grid;place-items:center;font-weight:900;font-size:23px;transform:skew(-5deg)}.brand h1{font-size:21px;margin:0}.brand small{display:block;color:#bdcad5;font-size:12px}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap;font-size:14px}nav a:hover{color:#ffb366}
+.call-btn,.primary{background:var(--orange);color:#142638;border:0;border-radius:9px;padding:11px 18px;font-weight:bold;display:inline-flex;justify-content:center;align-items:center;gap:8px}
+.hero{padding:58px 5%;background:linear-gradient(115deg,rgba(9,26,42,.96),rgba(19,52,75,.88)),radial-gradient(circle at 80% 20%,#476579,#102235);color:white;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center;min-height:350px}
+.eyebrow{color:#ffb366;font-weight:bold;font-size:13px}.hero h2{font-size:clamp(29px,4vw,47px);line-height:1.45;margin:10px 0}.hero p{color:#d4e0e9;max-width:620px}.hero-visual{min-height:230px;border:1px solid #547083;border-radius:18px;background:linear-gradient(135deg,#243f54,#0d2031);display:grid;place-items:center;text-align:center;padding:20px;overflow:hidden;position:relative}.truck-icon{font-size:90px;filter:drop-shadow(0 12px 12px #07131f)}.hero-visual strong{display:block;font-size:18px}.hero-visual small{color:#b9c8d5}
+.search-wrap{margin:-25px 5% 0;position:relative;background:white;border-radius:14px;box-shadow:0 10px 35px #10223516;padding:17px;display:flex;gap:10px}
+.search-wrap input{flex:1;min-width:160px;border:1px solid var(--line);border-radius:9px;padding:12px 14px;outline-color:var(--orange)}
+.section{padding:48px 5%}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:22px}.section h2{margin:0;font-size:26px;color:var(--navy)}.section-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;padding:7px 14px;border-radius:30px;color:#405166}.filter.active{background:var(--navy);color:white;border-color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.product{background:white;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 5px 18px #10223508;display:flex;flex-direction:column}.product-img{height:205px;background:#e8edf2;display:grid;place-items:center;overflow:hidden;color:#738394}.product-img img{width:100%;height:100%;object-fit:cover}.product-img .placeholder{font-size:58px}.product-body{padding:17px;display:flex;flex-direction:column;flex:1}.product h3{margin:0 0 8px;color:var(--navy);font-size:19px}.tag{display:inline-block;background:#fff1e3;color:#9a4c00;border-radius:5px;padding:2px 8px;font-size:12px;margin-bottom:9px;width:max-content}.specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;color:#536477;font-size:13px;margin:8px 0 14px}.product-desc{color:var(--muted);font-size:13px;white-space:pre-line}.product-actions{margin-top:auto;padding-top:14px;display:flex;gap:8px}.outline{border:1px solid var(--navy);background:white;color:var(--navy);border-radius:8px;padding:9px 12px;flex:1;text-align:center;font-weight:bold}.empty{grid-column:1/-1;background:white;border:1px dashed #bdc9d5;border-radius:12px;padding:35px;text-align:center;color:var(--muted)}
+.features{background:#eaf0f5;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:32px 5%}.feature{background:white;border-radius:12px;padding:20px}.feature b{color:var(--navy)}.feature span{display:block;color:var(--muted);font-size:13px;margin-top:5px}
+footer{background:#0a1927;color:#c7d3dd;padding:32px 5%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}footer strong{color:white}.admin-link{background:transparent;border:1px solid #617384;color:#c7d3dd;border-radius:8px;padding:7px 12px}
+.modal-backdrop{position:fixed;inset:0;background:#07131fc9;display:none;align-items:center;justify-content:center;padding:16px;z-index:10;overflow:auto}.modal-backdrop.show{display:flex}.modal{background:white;width:min(760px,100%);max-height:92vh;overflow:auto;border-radius:16px;padding:24px;box-shadow:0 20px 80px #0005}.modal h2{margin:0 0 12px;color:var(--navy)}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.close{border:0;background:#eef2f6;border-radius:8px;padding:5px 12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:13px;font-weight:bold;color:#425266}.field input,.field textarea,.field select{border:1px solid #d7e0e8;border-radius:8px;padding:10px;width:100%;outline-color:var(--orange)}.field textarea{min-height:85px;resize:vertical}.form-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}.danger{background:#fff0f0;border:1px solid #f0b7b7;color:#a32626;border-radius:8px;padding:8px 12px}.admin-list{display:grid;gap:10px;margin-top:20px}.admin-item{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--line);padding:10px;border-radius:9px}.admin-item span{font-size:14px;font-weight:bold}.note{background:#fff6e9;border:1px solid #ffd59f;padding:12px;border-radius:9px;font-size:13px;color:#77410b;margin:12px 0}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:38px}.hero-visual{min-height:150px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.features{grid-template-columns:1fr}.search-wrap{flex-wrap:wrap}.search-wrap input{min-width:100%}}
+@media(max-width:540px){header{padding:15px 4%}nav{gap:12px;font-size:13px}.hero,.section{padding-left:4%;padding-right:4%}.grid{grid-template-columns:1fr}.search-wrap{margin-left:4%;margin-right:4%}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.topbar{font-size:11px}.brand h1{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="topbar"><span>تولیدکننده انواع تریلی و نیمه‌تریلی</span><span>تماس مستقیم: <a href="tel:09198307423" dir="ltr">0919 830 7423</a></span></div>
+<header>
+  <a class="brand" href="#">
+    <div class="brand-mark">CT</div>
+    <div><h1>کاسپین تریلر</h1><small>قدرت، کیفیت، اطمینان در مسیر</small></div>
+  </a>
+  <nav><a href="#products">محصولات</a><a href="#about">درباره ما</a><a href="#contact">تماس با کارخانه</a></nav>
+  <a class="call-btn" href="tel:09198307423">☎ تماس برای سفارش</a>
+</header>
+<main>
+<section class="hero">
+  <div><span class="eyebrow">تولید و فروش مستقیم کارخانه</span><h2>تریلی مناسب کسب‌وکار شما</h2><p>مدل‌های مختلف تریلی را بررسی کنید، مشخصات فنی را ببینید و برای دریافت قیمت و ثبت سفارش مستقیماً با ما تماس بگیرید.</p><a class="call-btn" href="#products">مشاهده محصولات ↓</a></div>
+  <div class="hero-visual"><div><div class="truck-icon">🚛</div><strong>کاسپین تریلر</strong><small>برای مسیرهای سخت، ساخته شده است</small></div></div>
+</section>
+<div class="search-wrap"><input id="searchInput" type="search" placeholder="جست‌وجو بر اساس نام، مدل یا مشخصات تریلی…"><button class="primary" id="searchBtn">جست‌وجو</button></div>
+<section class="section" id="products">
+  <div class="section-head"><div><h2>ویترین محصولات</h2><p>محصول موردنظر خود را انتخاب کنید و برای سفارش تماس بگیرید.</p></div><div class="filters" id="filters"><button class="filter active" data-type="همه">همه محصولات</button><button class="filter" data-type="کفی">کفی</button><button class="filter" data-type="کمپرسی">کمپرسی</button><button class="filter" data-type="لبه‌دار">لبه‌دار</button><button class="filter" data-type="مخزن‌دار">مخزن‌دار</button></div></div>
+  <div class="grid" id="productGrid"></div>
+</section>
+<section class="features" id="about"><div class="feature"><b>🏭 تولید کارخانه</b><span>امکان معرفی محصولات تولیدی و مشخصات هر مدل.</span></div><div class="feature"><b>🧰 مشخصات شفاف</b><span>اطلاعات فنی، ابعاد و توضیحات هر محصول در یک صفحه.</span></div><div class="feature"><b>📞 سفارش مستقیم</b><span>برای استعلام قیمت و سفارش با کارخانه تماس بگیرید.</span></div></section>
+</main>
+<footer id="contact"><div><strong>کاسپین تریلر</strong><div>تولید و فروش انواع تریلی</div></div><div>تماس سفارش: <a href="tel:09198307423" dir="ltr">0919 830 7423</a></div><button class="admin-link" id="adminOpen">ورود مدیریت</button></footer>
+
+<div class="modal-backdrop" id="loginModal"><div class="modal" style="max-width:480px"><div class="modal-head"><h2>ورود به پنل مدیریت</h2><button class="close" data-close>بستن ✕</button></div><p style="color:#64748b;font-size:14px">این بخش برای افزودن، ویرایش و حذف محصولات است.</p><form id="loginForm"><div class="field"><label for="adminCode">کد ورود مدیریت</label><input id="adminCode" type="password" required autocomplete="current-password" placeholder="کد مدیریت را وارد کنید"></div><div class="form-actions"><button class="primary" type="submit">ورود به پنل</button></div></form><div class="note">توجه: این نسخه نمونه است و کد ورود داخل فایل سایت بررسی می‌شود؛ برای انتشار عمومی، پنل باید به احراز هویت امن سمت سرور متصل شود.</div></div></div>
+
+<div class="modal-backdrop" id="adminModal"><div class="modal"><div class="modal-head"><h2>پنل مدیریت محصولات</h2><button class="close" data-close>بستن ✕</button></div>
+<p style="color:#64748b;font-size:14px;margin-top:0">اطلاعات و تصویر محصول را وارد کنید. در این نسخه اطلاعات در همین مرورگر ذخیره می‌شود.</p>
+<form id="productForm"><input type="hidden" id="editId"><div class="form-grid">
+<div class="field"><label for="pName">نام محصول *</label><input id="pName" required placeholder="مثلاً تریلی کفی ۳ محور"></div>
+<div class="field"><label for="pType">دسته‌بندی *</label><select id="pType"><option>کفی</option><option>کمپرسی</option><option>لبه‌دار</option><option>مخزن‌دار</option><option>سایر</option></select></div>
+<div class="field"><label for="pModel">مدل / تعداد محور</label><input id="pModel" placeholder="مثلاً ۳ محور"></div>
+<div class="field"><label for="pCapacity">ظرفیت / تناژ</label><input id="pCapacity" placeholder="مثلاً متناسب با سفارش"></div>
+<div class="field"><label for="pLength">ابعاد</label><input id="pLength" placeholder="طول، عرض یا ارتفاع"></div>
+<div class="field"><label for="pPrice">قیمت (اختیاری)</label><input id="pPrice" placeholder="برای قیمت تماس بگیرید"></div>
+<div class="field full"><label for="pDesc">توضیحات و مشخصات فنی</label><textarea id="pDesc" placeholder="جنس بدنه، نوع سیستم تعلیق، امکانات و توضیحات…"></textarea></div>
+<div class="field full"><label for="pImage">تصویر محصول</label><input id="pImage" type="file" accept="image/*"><small style="color:#64748b">تصویر انتخابی در همین مرورگر ذخیره می‌شود؛ برای عکس‌های حجیم بهتر است نسخه نهایی از فضای ذخیره‌سازی سرور استفاده کند.</small></div>
+</div><div class="form-actions"><button class="primary" type="submit" id="saveProduct">ذخیره محصول</button><button class="outline" type="button" id="resetProduct">پاک کردن فرم</button></div></form>
+<div class="admin-list" id="adminList"></div>
+</div></div>
+<script>
+const PHONE = '09198307423';
+// نمونه اولیه: برای سایت عمومی، ورود مدیر را به سرویس امن سمت سرور متصل کنید.
+const ADMIN_CODE = 'caspian trailer . com . admin . Log in to User Panel';
+const STORAGE_KEY = 'caspian_trailer_products_v1';
+let products = [];
+try { products = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch(e) { products = []; }
+let activeType = 'همه';
+const $ = id => document.getElementById(id);
+function saveProducts(){ try{localStorage.setItem(STORAGE_KEY,JSON.stringify(products));}catch(e){alert('ذخیره انجام نشد؛ احتمالاً حجم عکس زیاد است. عکس کوچک‌تری انتخاب کنید.');} }
+function escapeHtml(v=''){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function productCard(p){const searchable=[p.name,p.type,p.model,p.capacity,p.length,p.desc].join(' ').toLowerCase();return `<article class="product" data-type="${escapeHtml(p.type)}" data-search="${escapeHtml(searchable)}"><div class="product-img">${p.image?`<img src="${p.image}" alt="${escapeHtml(p.name)}">`:'<div style="text-align:center"><div class="placeholder">🚛</div><small>تصویر محصول</small></div>'}</div><div class="product-body"><span class="tag">${escapeHtml(p.type||'سایر')}</span><h3>${escapeHtml(p.name)}</h3><div class="specs">${p.model?`<span>مدل: ${escapeHtml(p.model)}</span>`:''}${p.capacity?`<span>ظرفیت: ${escapeHtml(p.capacity)}</span>`:''}${p.length?`<span>ابعاد: ${escapeHtml(p.length)}</span>`:''}</div>${p.desc?`<div class="product-desc">${escapeHtml(p.desc)}</div>`:''}<div style="margin-top:12px;font-weight:bold;color:#173b55">${escapeHtml(p.price||'قیمت: تماس بگیرید')}</div><div class="product-actions"><a class="primary" style="flex:1" href="tel:${PHONE}">تماس برای سفارش</a></div></div></article>`}
+function renderProducts(){const q=$('searchInput').value.trim().toLowerCase();const found=products.filter(p=>(activeType==='همه'||p.type===activeType)&&[p.name,p.type,p.model,p.capacity,p.length,p.desc].join(' ').toLowerCase().includes(q));$('productGrid').innerHTML=found.length?found.map(productCard).join(''):'<div class="empty">هنوز محصولی ثبت نشده یا محصولی با این جست‌وجو پیدا نشد.<br>برای افزودن محصولات، از بخش «ورود مدیریت» استفاده کنید.</div>';document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b.dataset.type===activeType));}
+function renderAdminList(){$('adminList').innerHTML='<h3 style="margin:12px 0 0">محصولات ثبت‌شده ('+products.length+')</h3>'+ (products.length?products.map(p=>`<div class="admin-item"><span>${escapeHtml(p.name)} <small style="color:#64748b">(${escapeHtml(p.type)})</small></span><div style="display:flex;gap:6px;flex-wrap:wrap"><button class="outline" type="button" onclick="editProduct('${p.id}')">ویرایش</button><button class="danger" type="button" onclick="deleteProduct('${p.id}')">حذف</button></div></div>`).join(''):'<p style="color:#64748b">هنوز محصولی اضافه نشده است.</p>');}
+function openModal(id){$(id).classList.add('show')}function closeModals(){document.querySelectorAll('.modal-backdrop').forEach(m=>m.classList.remove('show'))}
+$('adminOpen').addEventListener('click',()=>{ $('adminCode').value='';openModal('loginModal'); });
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();if($('adminCode').value===ADMIN_CODE){closeModals();renderAdminList();openModal('adminModal');}else{alert('کد ورود صحیح نیست.');}});
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',closeModals));
+document.querySelectorAll('.modal-backdrop').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModals()}));
+$('filters').addEventListener('click',e=>{const b=e.target.closest('[data-type]');if(b){activeType=b.dataset.type;renderProducts();}});
+$('searchInput').addEventListener('input',renderProducts);$('searchBtn').addEventListener('click',renderProducts);
+function resetForm(){$('productForm').reset();$('editId').value='';$('saveProduct').textContent='ذخیره محصول';}
+$('resetProduct').addEventListener('click',resetForm);
+$('productForm').addEventListener('submit',e=>{e.preventDefault();const file=$('pImage').files[0];const existing=products.find(p=>p.id===$('editId').value);const base={id:$('editId').value||String(Date.now()),name:$('pName').value.trim(),type:$('pType').value,model:$('pModel').value.trim(),capacity:$('pCapacity').value.trim(),length:$('pLength').value.trim(),price:$('pPrice').value.trim(),desc:$('pDesc').value.trim(),image:existing?.image||''};const finish=()=>{if(existing){products=products.map(p=>p.id===existing.id?base:p)}else products.unshift(base);saveProducts();renderProducts();renderAdminList();resetForm();alert('محصول ذخیره شد.');};if(file){if(file.size>1_500_000){alert('لطفاً تصویری کمتر از ۱٫۵ مگابایت انتخاب کنید.');return;}const reader=new FileReader();reader.onload=()=>{base.image=reader.result;finish()};reader.readAsDataURL(file);}else finish();});
+window.editProduct=id=>{const p=products.find(x=>x.id===id);if(!p)return;$('editId').value=p.id;$('pName').value=p.name;$('pType').value=p.type;$('pModel').value=p.model||'';$('pCapacity').value=p.capacity||'';$('pLength').value=p.length||'';$('pPrice').value=p.price||'';$('pDesc').value=p.desc||'';$('pImage').value='';$('saveProduct').textContent='ذخیره تغییرات';$('productForm').scrollIntoView({behavior:'smooth',block:'start'});};
+window.deleteProduct=id=>{const p=products.find(x=>x.id===id);if(p&&confirm('محصول «'+p.name+'» حذف شود؟')){products=products.filter(x=>x.id!==id);saveProducts();renderProducts();renderAdminList();}};
+renderProducts();
+</script>
+</body>
+</html>

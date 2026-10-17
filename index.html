@@ -8,6 +8,59 @@
     const cleanURL = window.location.pathname + window.location.hash;
     window.history.replaceState(null, "", cleanURL);
   }
+  let selectedProductImage = "";
+
+function previewProductImage(event) {
+  const file = event.target.files[0];
+  const preview = document.getElementById("pImagePreview");
+
+  selectedProductImage = "";
+  preview.style.display = "none";
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("لطفاً یک فایل تصویری انتخاب کن.");
+    event.target.value = "";
+    return;
+  }
+
+  if (file.size > 5 * 1024 * 1024) {
+    alert("حجم عکس باید کمتر از ۵ مگابایت باشد.");
+    event.target.value = "";
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    const img = new Image();
+
+    img.onload = function () {
+      const canvas = document.createElement("canvas");
+      const maxSize = 1200;
+      const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      selectedProductImage = canvas.toDataURL("image/jpeg", 0.8);
+      preview.src = selectedProductImage;
+      preview.style.display = "block";
+    };
+
+    img.onerror = function () {
+      alert("خواندن عکس امکان‌پذیر نیست.");
+    };
+
+    img.src = reader.result;
+  };
+
+  reader.readAsDataURL(file);
+}
 </script>
 
   <meta charset="UTF-8">
@@ -616,6 +669,7 @@ function loginAdmin(){
   showAdminPanel();
 }
 function showAdminPanel(){
+  selectedProductImage = "";
   document.getElementById("adminBody").innerHTML=`
     <h3>مدیریت محصولات</h3>
     <div class="field"><label>نام محصول</label><input id="pName" placeholder="مثلاً تریلی کفی"></div>
@@ -629,7 +683,21 @@ function showAdminPanel(){
     <div class="field"><label>مدل</label><input id="pModel" placeholder="مدل محصول"></div>
     <div class="field"><label>توضیحات</label><textarea id="pDescription" placeholder="مشخصات و توضیحات"></textarea></div>
     <div class="field"><label>مشخصات کوتاه (با ویرگول جدا کنید)</label><input id="pSpecs" placeholder="مثلاً ظرفیت، ابعاد، سال ساخت"></div>
-    <div class="field"><label>لینک تصویر محصول</label><input id="pImage" placeholder="https://..."></div>
+    <div class="field">
+  <label for="pImageFile">عکس تریلی</label>
+  <input
+    id="pImageFile"
+    type="file"
+    accept="image/jpeg,image/png,image/webp"
+    onchange="previewProductImage(event)"
+  >
+  <img
+    id="pImagePreview"
+    alt="پیش‌نمایش عکس تریلی"
+    style="display:none;width:100%;max-height:220px;object-fit:contain;border-radius:12px;margin-top:10px;background:#f3f5f8"
+  >
+  <small class="notice">عکس را از کامپیوتر انتخاب کن؛ نیازی به لینک نیست.</small>
+</div>
     <button class="btn btn-orange" onclick="addProduct()">افزودن محصول</button>
     <hr style="border:0;border-top:1px solid #e5e9ef;margin:20px 0">
     <h4>محصولات موجود</h4>
@@ -650,7 +718,7 @@ function addProduct(){
     model:document.getElementById("pModel").value.trim(),
     description:document.getElementById("pDescription").value.trim(),
     specs:document.getElementById("pSpecs").value.split(",").map(s=>s.trim()).filter(Boolean),
-    image:document.getElementById("pImage").value.trim()
+    image: selectedProductImage
   });
   saveProducts();
   renderProducts();

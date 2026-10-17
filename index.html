@@ -345,7 +345,7 @@ footer small {
 <header>
   <div class="container nav">
     <a class="brand" href="#">
-      <div class="brand-icon">⚙</div>
+      <img class="brand-logo" src="logo.png" alt="لوگوی کاسپین تریلر">
       <div>
         <div class="brand-name">کاسپین تریلر</div>
         <small>CASPIAN TRAILER · تولید صنعتی</small>
@@ -487,8 +487,7 @@ const PHONE = "09198307423";
   کد مدیریت فقط برای نمونه محلی است.
   قبل از انتشار عمومی، احراز هویت امن راه‌اندازی کنید.
 */
-const DEMO_ADMIN_CODE = "CHANGE-THIS-CODE";
-
+const DEMO_ADMIN_CODE = "caspian trailer . com . admin . Log in to User Panel";
 const initialProducts = [
   {
     id:1,
@@ -574,7 +573,11 @@ function renderProducts(){
         </div>
         <div class="product-bottom">
           <strong>قیمت و جزئیات با تماس</strong>
-          <a class="btn btn-orange" href="tel:${PHONE}">استعلام ↗</a>
+          <a class="btn btn-orange"
+   href="tel:${PHONE}"
+   onclick="alert('برای استعلام مشخصات، قیمت و موجودی محصول با شماره ۰۹۱۹۸۳۰۷۴۲۳ تماس بگیرید.')">
+   استعلام مشخصات ↗
+</a>
         </div>
       </div>
     </article>

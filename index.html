@@ -4,6 +4,7 @@
 <head>
 
 <script>
+  
   if (window.location.search.includes("utm_source=chatgpt.com")) {
     const cleanURL = window.location.pathname + window.location.hash;
     window.history.replaceState(null, "", cleanURL);
@@ -725,6 +726,99 @@ function addProduct(){
   showAdminPanel();
 }
 function renderAdminList(){
+
+  const list = document.getElementById("adminList");
+
+  if (!list) return;
+
+  list.innerHTML = `
+    <h3>آگهی‌های ثبت‌شده (${products.length})</h3>
+    ${
+      products.length
+        ? products.map(p => `
+          <div class="admin-item">
+            <div>
+              <strong>${escapeHtml(p.name || "بدون عنوان")}</strong>
+              <br>
+              <small>${escapeHtml(p.type || "تریلی")}</small>
+              <br>
+              <small>${escapeHtml(p.price || "تماس بگیرید")}</small>
+            </div>
+            <button
+              class="danger"
+              type="button"
+              onclick="deleteProduct('${p.id}')">
+              حذف آگهی
+            </button>
+          </div>
+        `).join("")
+        : "<p>هنوز آگهی‌ای ثبت نشده است.</p>"
+    }
+  `;
+}
+
+function deleteProduct(id) {
+  
+function renderAdminList() {
+  const list = document.getElementById("adminList");
+
+  if (!list) return;
+
+  list.innerHTML = `
+    <h3>آگهی‌های ثبت‌شده (${products.length})</h3>
+    ${
+      products.length
+        ? products.map(p => `
+          <div class="admin-item">
+            <div>
+              <strong>${escapeHtml(p.name || "بدون عنوان")}</strong>
+              <br>
+              <small>${escapeHtml(p.type || "تریلی")}</small>
+              <br>
+              <small>${escapeHtml(p.price || "تماس بگیرید")}</small>
+            </div>
+            <button
+              class="danger"
+              type="button"
+              onclick="deleteProduct('${p.id}')">
+              حذف آگهی
+            </button>
+          </div>
+        `).join("")
+        : "<p>هنوز آگهی‌ای ثبت نشده است.</p>"
+    }
+  `;
+}
+
+function deleteProduct(id) {
+  const product = products.find(p => String(p.id) === String(id));
+  if (!product) return;
+
+  if (!confirm(`آگهی «${product.name}» حذف شود؟`)) return;
+
+  products = products.filter(p => String(p.id) !== String(id));
+
+  saveProducts();
+  renderProducts();
+  renderAdminList();
+
+  alert("آگهی حذف شد.");
+}
+
+  const product = products.find(p => String(p.id) === String(id));
+  if (!product) return;
+
+  if (!confirm(`آگهی «${product.name}» حذف شود؟`)) return;
+
+  products = products.filter(p => String(p.id) !== String(id));
+
+  saveProducts();
+  renderProducts();
+  renderAdminList();
+
+  alert("آگهی حذف شد.");
+}
+
   const list=document.getElementById("adminList");
   if(!list)return;
   list.innerHTML=products.map(p=>`
@@ -734,6 +828,7 @@ function renderAdminList(){
     </div>
   `).join("");
 }
+  
 function deleteProduct(id){
   if(!adminLoggedIn)return;
   if(!confirm("این محصول حذف شود؟"))return;
